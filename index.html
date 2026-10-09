@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebsite - Trang chủ</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(65%);
+        }
+
+        .carousel-caption {
+            bottom: 25%;
+        }
+
+        .welcome-section {
+            min-height: 220px;
+        }
+
+        .service-card {
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: #0d6efd;
+        }
+
+        .contact-section {
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px;
+            }
+
+            .carousel-caption {
+                bottom: 10%;
+            }
+
+            .carousel-caption h1 {
+                font-size: 25px;
+            }
+
+            .carousel-caption p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Bước 2: Navbar với Font Awesome -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-house"></i> MyWebsite
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Mở menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bước 3: Hero Section với Carousel -->
+    <div id="heroCarousel" class="carousel slide"
+        data-bs-ride="carousel" data-bs-interval="3500">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel"
+                data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+
+            <button type="button" data-bs-target="#heroCarousel"
+                data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+            <button type="button" data-bs-target="#heroCarousel"
+                data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80"
+                    class="d-block w-100" alt="Không gian làm việc hiện đại">
+
+                <div class="carousel-caption">
+                    <h1 class="fw-bold">Chào mừng đến MyWebsite</h1>
+                    <p>Khám phá những giải pháp tuyệt vời dành cho bạn.</p>
+                    <a href="#about" class="btn btn-primary btn-lg">
+                        Tìm hiểu thêm
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80"
+                    class="d-block w-100" alt="Văn phòng sáng tạo">
+
+                <div class="carousel-caption">
+                    <h1 class="fw-bold">Sáng tạo mỗi ngày</h1>
+                    <p>Không ngừng đổi mới để mang lại giá trị tốt hơn.</p>
+                    <a href="#services" class="btn btn-success btn-lg">
+                        Khám phá dịch vụ
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80"
+                    class="d-block w-100" alt="Đội ngũ làm việc cùng nhau">
+
+                <div class="carousel-caption">
+                    <h1 class="fw-bold">Cùng nhau phát triển</h1>
+                    <p>Đồng hành cùng bạn trên hành trình thành công.</p>
+                    <a href="#contact" class="btn btn-warning btn-lg">
+                        Liên hệ ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+            <span class="visually-hidden">Trước</span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+            <span class="visually-hidden">Tiếp theo</span>
+        </button>
+    </div>
+
+    <!-- Bước 4: Section sử dụng Flexbox -->
+    <section id="about"
+        class="welcome-section d-flex justify-content-center align-items-center bg-light py-5 px-3 text-center">
+
+        <div class="container">
+            <h2 class="fw-bold mb-3">
+                Chào mừng đến với trang web của chúng tôi!
+            </h2>
+            <p class="text-secondary mb-0">
+                Chúng tôi luôn nỗ lực mang đến trải nghiệm tốt nhất
+                thông qua các giải pháp sáng tạo và hiệu quả.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section dịch vụ: sử dụng Grid và Flexbox -->
+    <section id="services" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Dịch vụ của chúng tôi</h2>
+            <p class="text-secondary">
+                Những giá trị chúng tôi mong muốn mang đến cho bạn.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card h-100 shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-laptop-code service-icon mb-3"></i>
+                        <h4 class="card-title">Thiết kế website</h4>
+                        <p class="card-text text-secondary">
+                            Xây dựng website hiện đại, thân thiện
+                            với người dùng và tương thích nhiều thiết bị.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card service-card h-100 shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-mobile-screen-button service-icon mb-3"></i>
+                        <h4 class="card-title">Thiết kế responsive</h4>
+                        <p class="card-text text-secondary">
+                            Giao diện tự động thích ứng với điện thoại,
+                            máy tính bảng và máy tính.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card service-card h-100 shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-headset service-icon mb-3"></i>
+                        <h4 class="card-title">Hỗ trợ khách hàng</h4>
+                        <p class="card-text text-secondary">
+                            Luôn sẵn sàng tiếp nhận ý kiến và hỗ trợ
+                            khách hàng khi cần thiết.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bước 5: Contact Form với Bootstrap -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Liên hệ với chúng tôi</h2>
+                <p class="text-secondary">
+                    Hãy để lại thông tin, chúng tôi sẽ liên hệ với bạn.
+                </p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <form id="contactForm" class="bg-white p-4 rounded shadow-sm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user me-2"></i>Tên của bạn
+                            </label>
+                            <input type="text" class="form-control"
+                                id="name" placeholder="Nhập tên của bạn"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope me-2"></i>Email
+                            </label>
+                            <input type="email" class="form-control"
+                                id="email" placeholder="example@email.com"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment me-2"></i>Nội dung
+                            </label>
+                            <textarea class="form-control" id="message"
+                                rows="4" placeholder="Nhập nội dung liên hệ"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Gửi liên hệ
+                        </button>
+
+                        <div id="formMessage" class="mt-3"
+                            role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-2">
+                &copy; 2026 MyWebsite. All rights reserved.
+            </p>
+            <div>
+                <a href="#" class="text-white mx-2" aria-label="Facebook">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+                <a href="#" class="text-white mx-2" aria-label="Instagram">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="#" class="text-white mx-2" aria-label="Twitter">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Kiểm tra form ở phía trình duyệt -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (contactForm.checkValidity()) {
+                formMessage.className = "mt-3 alert alert-success";
+                formMessage.textContent =
+                    "Cảm ơn bạn! Thông tin đã được kiểm tra thành công.";
+
+                contactForm.reset();
+            } else {
+                contactForm.reportValidity();
+            }
+        });
+    </script>
+
+</body>
+</html>
